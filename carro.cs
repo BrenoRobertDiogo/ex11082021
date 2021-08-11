@@ -27,7 +27,7 @@ public class Carro {
     this._capacidadeTanque = kmr;
     this._kmRodados = ta;
     this._autonomiaPorLitro = aut;
-  }
+  }//
   
   public Carro(string mod, string mc, int a, double vn, int ct, int aut ) 
   {
