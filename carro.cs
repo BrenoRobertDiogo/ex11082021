@@ -1,11 +1,14 @@
-public class Carro {
+public class Carro: Veiculo {
   private string _modelo {get; set;}
   private string _marca {get; set;}
   private int _anoFabricacao {get; set;}
   private double _tanqueNovo {get; set;}
   private double _tanqueAtual {get; set;}
   private int _capacidadeTanque {get; set;}
-  private int _kmRodados {get; set;}
+  private int _kmRodados {
+    get;
+    set;
+}
   private int _autonomiaPorLitro {get; set;}
   
   public string modelo {
@@ -34,14 +37,19 @@ public class Carro {
     }
   public int kmRodados { 
       get => this._kmRodados;
-      set => this._kmRodados = value;
+      set {
+    if(_kmRodados > 0)
+    {
+       _kmRodados = value;
+    }
+  }
     }
   public int autonomiaPorLitro {
       get => this._autonomiaPorLitro;
       set => this._autonomiaPorLitro = value;
     }
 
-  public Carro(string mod, string mc, int a, double vn, int ct, int kmr, int ta, int aut ) 
+  public Carro(string mod, string mc, int a, double vn, int ct, int kmr, int ta, int aut ) : base("Registro", "Motorista", 3)
   {
     this._modelo = mod;
     this._marca = mc;
